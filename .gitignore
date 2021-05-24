@@ -1,0 +1,40 @@
+target
+classes
+bin
+*.log
+dist
+node_modules
+*.DS_Store
+data/programData/settings.properties
+data/testData/settings.properties
+server/src/main/resources/programData/settings.properties
+web/src/main/resources/programData/settings.properties
+webapp/node_modules
+
+# Eclipse
+.classpath
+.project
+.settings
+.metadata
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea
+build
+out
+generated
+MANIFEST.MF
+
+#gradle
+gradle
+.gradle
+
+webapp/dist
+webapp/tmp
+webapp/out-tsc
+# Only exists if Bazel was run
+webapp/bazel-out
+
+*.war
