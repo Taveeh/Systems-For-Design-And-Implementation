@@ -10,6 +10,7 @@ data/testData/settings.properties
 server/src/main/resources/programData/settings.properties
 web/src/main/resources/programData/settings.properties
 webapp/node_modules
+node_modules
 
 # Eclipse
 .classpath
