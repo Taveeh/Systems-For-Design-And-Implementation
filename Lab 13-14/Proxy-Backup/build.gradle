@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'ro.ubb.pisicilesalbatice.proxy'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_15
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':web')
+    implementation 'org.projectlombok:lombok:1.18.18'
+    implementation group: 'org.springframework', name: 'spring-context', version: "5.2.13.RELEASE"
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: "5.2.13.RELEASE"
+    implementation group: 'org.springframework', name: 'spring-web', version: "5.2.13.RELEASE"
+    implementation group: 'javax.servlet', name: 'javax.servlet-api', version:"4.0.1"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "2.9.4"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "2.9.4"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.4.5'
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure
+    implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.4.5'
+
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot
+    implementation group: 'org.springframework.boot', name: 'spring-boot', version: '2.4.5'
+
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}

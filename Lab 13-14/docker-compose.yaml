@@ -1,0 +1,60 @@
+version: "3"
+services:
+  frontend:
+    build: ./Frontend
+    ports:
+      - 4200:4200
+    links:
+      - proxy
+  proxy:
+    build: ./Proxy
+    ports:
+      - 8080:8080
+    links:
+      - foods
+      - cats
+      - customers
+      - catfoods
+      - purchases
+  foods:
+    build:
+      ./FoodMicroService
+    container_name:
+      foods
+    links:
+      - database
+  cats:
+    build:
+      ./CatMicroService
+    container_name:
+      cats
+    links:
+      - database
+  customers:
+    build:
+      ./CustomerMicroService
+    container_name:
+      customers
+    links:
+      - database
+  purchases:
+    build:
+      ./PurchaseMicroService
+    container_name:
+      purchases
+    links:
+      - database
+  catfoods:
+    build:
+      ./CatFoodMicroService
+    container_name:
+      catfoods
+    links:
+      - database
+  database:
+    image: postgres
+    container_name:
+      database
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: wildCats

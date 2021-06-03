@@ -1,0 +1,22 @@
+services:
+  foods:
+    container_name:
+      foods
+    build:
+      .
+    links:
+      - database
+    ports:
+    - 3001:3001
+  database:
+    container_name:
+      postgres
+    image:
+      postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: wildcats
+

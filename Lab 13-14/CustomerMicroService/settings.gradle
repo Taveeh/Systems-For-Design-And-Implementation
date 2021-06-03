@@ -1,0 +1,4 @@
+rootProject.name = 'CustomerMicroService'
+include 'core'
+include 'web'
+
