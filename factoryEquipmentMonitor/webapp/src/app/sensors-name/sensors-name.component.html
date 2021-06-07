@@ -1,0 +1,13 @@
+<ul *ngFor="let sensor of sensors">
+  <li>
+    <label *ngIf="checked === true">Sensor name: </label> {{sensor}}
+    <button *ngIf="checked === true">Stop</button>
+    <div *ngIf="checked === true && sensorNames.has(sensor)">
+      <ul *ngFor="let s of sensorNames.get(sensor)">
+        <li>{{s.id}}, {{s.name}}, {{s.measurement}}, {{s.time}}</li>
+      </ul>
+    </div>
+  </li>
+</ul>
+
+<button (click)="pressButton()">Show</button>
